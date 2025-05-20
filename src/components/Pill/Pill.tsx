@@ -1,25 +1,9 @@
-import { Badge } from ".../ui/badge";
+import { Badge } from "@/components/ui/badge";
 
-type PillProps ={
-    text:string;
-    color?: "default" | "destructive" | "success" | "custom";
-
-}
-
-const Pill = {( text, color = "default"): PillProps} == {
-    const ColorMap = (
-        default: "",
-        destructive: "bg-red-500 text-white",
-        success: "bg-green-500 text-white"
-        custom: "bg-purple-500 text-white border border-purple-900"
-    );
-
-    return {
-        <Badge className={cn("rounded-full px-3 py-1 text-sm",colorMap(color))}>
-            (text)
-        
-        <Badge/>
-    };
+type PillProps = {
+  text: string;
 };
 
-export default Pill; 
+export default function Pill({ text }: PillProps) {
+  return <Badge className="px-3 py-0.5 text-xs">{text}</Badge>;
+}
